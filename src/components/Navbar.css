@@ -1,0 +1,169 @@
+/* Basic styling for the navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(rgba(0, 0, 0, 0.6) -28.88%, rgba(0, 0, 0, 0) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  margin-bottom: -4.8rem;
+}
+
+/* Container to center content */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Logo styling */
+.navbar-logo img {
+  height: 60px;
+  margin-left: 1.8rem;
+}
+
+/* Navigation links styling */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-links a:hover {
+  text-decoration: underline;
+}
+
+/* Individual nav items */
+.navbar-item {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  color: white;
+  transition: color 0.3s ease;
+  font-weight: 300;
+  margin-left: 0.4rem;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.navbar-item:hover {
+  color: #4285f4;
+}
+
+/* Profile and hamburger menu container */
+.navbar-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0.4rem;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+/* Profile image styling */
+.profile-img {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  object-cover: cover;
+}
+
+/* Hamburger menu icon */
+.hamburger-icon {
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Profile icon as a fallback */
+.profile-icon {
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+/* Dropdown item styling */
+.dropdown-item {
+  background: none;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  color: #4285f4;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Basic styling for the navbar */
+/* .navbar {
+  position: sticky;
+  padding-bottom: 0.1px;
+  top: 0px;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(rgba(0, 0, 0, 0.6) -28.88%, rgba(0, 0, 0, 0) 100%);
+  z-index: 100;
+  transform: translateZ(0px);
+  display: flex;
+    height: 4.8rem;
+    flex: 1 1 0%;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-bottom: -4.8rem;
+  
+} */
+
+/* Basic styling for the navbar */
+/* .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(rgba(0, 0, 0, 0.6) -28.88%, rgba(0, 0, 0, 0) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  margin-bottom: -4.8rem;
+} */
+

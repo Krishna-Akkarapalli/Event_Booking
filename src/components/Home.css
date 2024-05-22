@@ -1,0 +1,535 @@
+/* body, html, .app {
+    margin: 0;
+    top: 0;
+    padding: 0;
+
+    height: 100%;
+    width: 100%;
+  } */
+  
+  
+  .header {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    animation: 1.6s ease-in-out 0s 1 normal forwards running;
+  }
+  
+  .header-content {
+    color: white;
+    z-index: 1;
+  }
+  
+  .header-content h1 {
+    font-size: 3rem;
+    margin: 0 0 20px 0;
+  }
+  
+  .header-content input {
+    padding: 10px;
+    font-size: 1rem;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+  }
+  .cont-art {
+    display: flex; /* Flexbox for layout */
+    flex-wrap: wrap; /* Wrap to new line if necessary */
+    gap: 16px; /* Space between buttons */
+    padding: 16px; /* Padding around the container */
+    background-color: rgba(255, 255, 255, 0);/* Light background */
+    justify-content: center; /* Center icons horizontally */
+    animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+    position: sticky; /* Sticky positioning */
+    top: 60px; /* Adjust based on navbar height */
+    z-index: 999; /* Ensure it stays above the main content */
+  }
+  
+  /* Individual icon button */
+  .but-nav {
+    background-color: white; /* White background */
+    border: none; /* Remove border */
+    border-radius: 50%; /* Circular buttons */
+    width: 50px; /* Fixed width */
+    height: 50px; /* Fixed height */
+    display: flex; /* Flexbox for centering icon */
+    align-items: center; /* Center icon vertically */
+    justify-content: center; /* Center icon horizontally */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth hover effects */
+    animation: popIn 0.5s ease-in-out; /* Pop-in animation */
+    animation-delay: var(--delay); /* Staggered animation delay */
+  }
+  
+  /* Icon inside the button */
+  .but-nav i {
+    font-size: 24px; /* Icon size */
+    color: #ff5a5f; /* Airbnb icon color */
+  }
+  
+  /* Hover effect for buttons */
+  .but-nav:hover {
+    transform: translateY(-4px) scale(1.1); /* Slight lift and scale on hover */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+  }
+  
+  /* Keyframes for animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0; /* Start with invisible */
+    }
+    to {
+      opacity: 1; /* Fully visible */
+    }
+  }
+  
+  @keyframes popIn {
+    0% {
+      transform: scale(0.5); /* Start with smaller size */
+      opacity: 0; /* Invisible */
+    }
+    100% {
+      transform: scale(1); /* Full size */
+      opacity: 1; /* Fully visible */
+    }
+  }
+  
+  /* Responsive behavior */
+  @media (max-width: 600px) {
+    .but-nav {
+      width: 40px; /* Smaller buttons for mobile */
+      height: 40px; /* Smaller buttons for mobile */
+    }
+  
+    .but-nav i {
+      font-size: 20px; /* Smaller icon size for mobile */
+    }
+  }
+  
+
+
+  
+  /* Main container holding all cards */
+.Artist-cont-main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 16px; /* Space between cards */
+  padding: 16px; /* Padding around the grid */
+  background-color: #f8f8f8; /* Light background for the grid */
+}
+
+/* Individual card */
+.Artist-sub1 {
+  background-color: #fff; /* White background for cards */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  overflow: hidden; /* Ensure content fits within rounded corners */
+  transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effects */
+  animation: fadeIn 0.5s ease-in-out; /* Fade-in animation */
+}
+
+/* Card link */
+.event-link {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color */
+}
+
+/* Promo section */
+.promo-section {
+  position: relative; /* Position for promo indicator */
+}
+
+.promo-indicator {
+  position: absolute; /* Positioned within the promo section */
+  top: 8px;
+  left: 8px;
+  background-color: #ff5a5f; /* Airbnb promo color */
+  color: #fff; /* White text color */
+  padding: 4px 8px; /* Padding around text */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 12px; /* Small font size */
+}
+
+/* Image container */
+.event-image-container {
+  width: 100%; /* Full width */
+  height: 280px; /* Fixed height */
+  overflow: hidden; /* Ensure images fit within the container */
+}
+
+.event-image-container img {
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  object-fit: cover; /* Cover entire container */
+}
+
+/* Event details */
+.event-details {
+  padding: 16px; /* Padding inside the card */
+}
+
+.event-title {
+  font-size: 18px; /* Title font size */
+  font-weight: bold; /* Bold title */
+  margin-bottom: 8px; /* Space below title */
+}
+
+.event-location,
+.event-category,
+.event-price {
+  font-size: 14px; /* Smaller font size for other details */
+  color: #555; /* Dark grey text color */
+  margin-bottom: 4px; /* Space below each item */
+}
+
+.event-heading {
+  font-size: 16px; /* Slightly larger heading font */
+  font-weight: 600; /* Semi-bold heading */
+  margin-top: 16px; /* Space above heading */
+}
+
+/* Go button */
+.go-button {
+  display: inline-block; /* Inline block for button */
+  margin-top: 12px; /* Space above button */
+  padding: 8px 16px; /* Padding inside button */
+  background-color: #ff5a5f; /* Airbnb button color */
+  color: #fff; /* White text color */
+  text-align: center; /* Center text */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 14px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.2s; /* Smooth color transition */
+}
+
+.go-button:hover {
+  background-color: #e04547; /* Darker shade on hover */
+}
+
+/* Hover effect for cards */
+.Artist-sub1:hover {
+  transform: translateY(-4px); /* Slight lift on hover */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+}
+.image-wrapper{
+  /* --dls-liteimage-object-fit: cover; */
+  height: 253px;
+  width: 100%;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Start with invisible */
+    transform: scale(0.95); /* Slightly scaled down */
+  }
+  to {
+    opacity: 1; /* Fully visible */
+    transform: scale(1); /* Original size */
+  }
+}
+
+/* Responsive behavior */
+@media (max-width: 1200px) {
+  .Artist-cont-main {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for large tablets */
+  }
+}
+
+@media (max-width: 900px) {
+  .Artist-cont-main {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .Artist-cont-main {
+    grid-template-columns: 1fr; /* 1 column for mobile devices */
+  }
+}
+
+.live-trnd-hd {
+  display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    vertical-align: initial;
+}
+.Best-li-Hd{
+  display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    vertical-align: initial;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.17;
+
+}
+.Scroll-cont-main{
+  scroll-behavior: smooth;
+    transition: transform 1000ms ease 0s;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    padding: 0px;
+    display: grid;
+    grid-template-columns: repeat(11, calc(20% - 25.6px));
+    grid-template-rows: repeat(1, 1fr);
+    grid-auto-flow: column;
+    gap: 8px 32px;
+    overflow: scroll hidden;
+    transform: initial;
+}
+.card-container:hover {
+  transform: translateY(-4px); /* Slight lift on hover */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+}
+.card-container{
+  display: flex;
+    position: relative;
+    -webkit-box-align: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeIn 1s ease-in-out;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+}
+.card-image-container{
+  display: flex;
+    position: relative;
+    -webkit-box-align: center;
+    align-items: center;
+    overflow: hidden;
+    transition: height 0.3s ease-in 0s, width 0.3s ease-in 0s;
+
+}
+.card-image-wrapper{
+  display: flex;
+    height: 100%;
+    width: 100%;
+}
+.card-image-inner{
+  max-height: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    background: rgb(238, 238, 238);
+    border-radius: 8px;
+    position: relative;
+    z-index: 1;
+}
+.card-img{
+  border-radius: 0px;
+    opacity: 1;
+    transition: all 0.5s ease 0s;
+    width: 100%;
+    min-height: inherit;
+    max-height: inherit;
+
+}
+
+
+
+
+/* .live-trnd-hd {
+  display: flex;
+  overflow-x: auto;
+  padding: 20px;
+  display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.card-container {
+  width: 201.08px;
+  height: 201.08px;
+  margin: 20px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.card-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.card-link {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.card-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.card-image-container {
+  width: 100%;
+  height: 100%;
+}
+
+.card-image-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.card-image-inner {
+  height: 100%;
+  width: 100%;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s ease;
+}
+
+.card-img {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card-container:hover .card-overlay {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+} */
+
+
+
+
+
+
+/* .card-container {
+  width: 201.08px;
+  height: 201.08px;
+  margin: 20px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.card-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.card-link {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.card-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.card-image-container {
+  width: 100%;
+  height: 100%;
+}
+
+.card-image-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.card-image-inner {
+  height: 100%;
+  width: 100%;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.5s ease;
+}
+
+.card-img {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card-container:hover .card-overlay {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} */
+
+

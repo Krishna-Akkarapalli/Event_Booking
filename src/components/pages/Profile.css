@@ -1,0 +1,139 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 2rem auto;
+  
+}
+/* .profile-container {
+  background-image: url('../../../public/assets/img-4.jpg');
+  background-size: cover;
+  filter: blur(10px);
+  background-position: center;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 10% 25%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  color: #fff; 
+} */
+
+.profile-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  border: 2px solid #ddd;
+}
+
+.upload-status {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.submit-button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.profile-actions {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.delete-account, .sign-out {
+  cursor: pointer;
+  color: #dc3545;
+  transition: color 0.3s ease;
+}
+
+.delete-account:hover, .sign-out:hover {
+  color: #a71d2a;
+}
+
+.error-message {
+  color: #dc3545;
+  margin-top: 1rem;
+}
+
+.success-message {
+  color: #28a745;
+  margin-top: 1rem;
+}
+
+/* Keyframes for smooth animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.profile-container {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.profile-picture {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.input-field {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.submit-button {
+  animation: fadeIn 2s ease-in-out;
+}

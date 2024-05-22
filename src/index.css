@@ -1,0 +1,151 @@
+/* Import Roboto font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+:root {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 16px; 
+  color: #333; /* Base text color */
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f5; 
+  scroll-behavior: smooth; 
+  /* overflow-x: hidden;  */
+  /* overflow-y: hidden;  */
+  /* background: #0000; */
+    /* height: 0;
+    width: 0; */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 1em;
+  line-height: 1.25;
+  font-weight: 500;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2em 0;
+}
+
+header, footer {
+  background: #646cff;
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+}
+
+header {
+  animation: fadeInDown 1s ease both;
+}
+
+footer {
+  font-size: 10.875em;
+}
+
+.main-content {
+  animation: fadeInUp 1s ease both;
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
+}
+
+/* Responsive Typography */
+@media (min-width: 600px) {
+  :root {
+    font-size: 18px; /* Increase base font size for larger screens */
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    font-size: 20px; /* Further increase base font size for even larger screens */
+  }
+}
+
+
+
+
+/* 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+:root {
+  font-family: 'Roboto', sans-serif; 
+  line-height: 1.5;
+  font-weight: 400;
+
+  
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+}
+
+a:hover {
+  color: #535bf2;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
