@@ -1,0 +1,325 @@
+
+
+.app-container {
+  width: 100%; 
+  margin-top: 4.6rem;
+  background-color: rgb(252,231,231);
+  border-radius: 8px;
+}
+
+.movie-header {
+  background-color: #a82e2e13;
+  margin: 15px 20px;
+  padding: 5px 10px;
+  text-align: center;
+  border-bottom: 1px solid #000000;
+  border-radius: 9px; 
+  transition: box-shadow 0.3s ease;
+}
+.movie-header:hover{
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.637);
+}
+
+.movie-header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.genres {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.genre-tag {
+  background-color:  #007bff;
+  padding: 6px 12px;
+  margin: 0 5px 5px 0; 
+  border-radius: 9px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1rem;
+  color:white;
+}
+
+/* Date Selector Styles */
+.date-selector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.date-item {
+  background-color: #ffffff3d;
+  border: 1px solid #000000; 
+  color: rgb(0, 0, 0);
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 25%;
+  cursor: pointer;
+  transition: background-color 0.3s ease; 
+  font-weight: 500; 
+}
+
+.date-item.selected {
+  background-color: #6c9af86c; 
+  border-color: #ccc; 
+}
+
+
+.date-selector button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 800;
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+
+/* Filter Bar Styles */
+.filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 20px;
+  padding: 5px 10px;
+  background-color: #a82e2e13;
+  border-radius: 9px;
+  transition: box-shadow 0.3s ease;
+}
+.filter-bar:hover { 
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8);
+  }
+.language {
+  background-color: #ffffff6f; 
+  padding: 8px 14px;
+  font-size: 1.2em;
+  border-radius: 20px; 
+  font-weight: 500;
+  color: #444;
+}
+
+.filter-options {
+  display: flex;
+  align-items: center;
+}
+
+.filter-dropdown {
+  position: relative;
+  margin-right: 20px;
+}
+
+.filter-dropdown span {
+  cursor: pointer;
+  font-weight: 500; 
+  margin-right: 10px;
+}
+
+.filter-dropdown select {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  min-width: 150px; 
+  background-color: #a82e2e13;
+  border: 1px solid #ff0000;
+  border-radius: 10px;
+  padding: 8px;
+  border-radius: 9px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.637);
+  transition: box-shadow 0.3s ease;
+  z-index: 1; 
+}
+
+.filter-dropdown:hover select {
+  display: block;
+}
+
+.filter-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+.filter-input input {
+  border: none;
+  padding: 5px;
+  margin-right: 8px;
+  width: 120px; 
+}
+
+.filter-input button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+
+/* Legend Styles */
+.legend {
+  display: flex;
+  align-items: center;
+  margin: 15px 20px;
+  padding: 5px 10px;
+  background-color: #a82e2e13;
+  border-radius: 4px;
+  transition: box-shadow 0.3s ease; 
+}
+.legend:hover{
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8);
+
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-right: 25px;
+  font-size: 0.85rem; 
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.available {
+  background-color: #4CAF50; 
+}
+
+.fast-filling {
+  background-color: #FFC107;
+}
+
+.theaters-list {
+  padding:40px 110px 110px 110px;
+  flex-direction: column;
+    /* gap: 50rem; */
+}
+
+.theater-card {
+  border: 1px solid #dddddd4e; 
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease; 
+  background-color: #a82e2e13;
+  
+
+}
+
+.theater-card:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.637);
+}
+
+.theater-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.theater-info {
+  display: flex;
+  align-items: center;
+}
+
+.theater-info i {
+  margin-right: 10px;
+  color: #999; 
+  font-size: 1.1rem; 
+}
+
+.theater-info h2 {
+  font-size: 1.1rem;
+  margin-bottom: 3px; 
+  color: #333;
+}
+
+.amenities {
+  display: flex;
+  align-items: center;
+  font-size: 100.8rem;
+  color: #555;
+}
+
+.amenities span {
+  display: flex;
+  align-items: center;
+  margin-right: 12px; 
+}
+
+.amenities i {
+  margin-right: 5px; 
+  font-size: 0.9rem;
+}
+
+.info-button {
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  color: #007bff; 
+  cursor: pointer;
+  font-weight: 500;
+}
+/* ArtoneShowcard.css */
+
+.showtimes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.showtime {
+  background-color: #28a745;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.9rem; 
+  margin: 4px 2px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; 
+  font-weight: 500; 
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.637);
+}
+
+.showtime:hover {
+  background-color: #218838; 
+}
+
+.showtime.cancellable {
+  background-color: #dc3545; 
+}
+
+.showtime.cancellable:hover {
+  background-color: #c82333; 
+}
+
+.format {
+  font-size: 0.7rem;
+  margin-left: 5px;
+  font-weight: 400; 
+}
+
+
+.showtime.cancellable:hover {
+  background-color: #c82333; 
+}
+
+.format {
+  font-size: 0.7rem;
+  margin-left: 5px;
+  font-weight: 900; 
+}

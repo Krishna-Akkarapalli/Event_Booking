@@ -1,13 +1,7 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useRef, useState, useEffect } from 'react';
-import {
-  getDownloadURL,
-  getStorage,
-  ref,
-  uploadBytesResumable,
-} from 'firebase/storage';
+import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage';
 import { app } from '../../firebase';
-import { useDispatch } from 'react-redux';
 import {
   updateUserStart,
   updateUserSuccess,
@@ -18,12 +12,11 @@ import {
   signOut,
 } from '../../Rudux/User/userSlice';
 import '../pages/Profile.css';
-// import img4 from "../../../public/assets/img-4.jpg"
 
 export default function Profile() {
   const dispatch = useDispatch();
   const fileRef = useRef(null);
-  const [image, setImage] = useState();
+  const [image, setImage] = useState(null);
   const [imagePercent, setImagePercent] = useState(0);
   const [imageError, setImageError] = useState(false);
   const [formData, setFormData] = useState({});
@@ -42,11 +35,11 @@ export default function Profile() {
     const fileName = new Date().getTime() + image.name;
     const storageRef = ref(storage, fileName);
     const uploadTask = uploadBytesResumable(storageRef, image);
+
     uploadTask.on(
       'state_changed',
       (snapshot) => {
-        const progress =
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         setImagePercent(Math.round(progress));
       },
       (error) => {
@@ -76,7 +69,7 @@ export default function Profile() {
         body: JSON.stringify(formData),
       });
       const data = await res.json();
-      if (data.success === false) {
+      if (!data.success) {
         dispatch(updateUserFailure(data));
         return;
       }
@@ -94,7 +87,7 @@ export default function Profile() {
         method: 'DELETE',
       });
       const data = await res.json();
-      if (data.success === false) {
+      if (!data.success) {
         dispatch(deleteUserFailure(data));
         return;
       }
@@ -107,83 +100,79 @@ export default function Profile() {
   const handleSignOut = async () => {
     try {
       await fetch('/api/auth/signout');
-      dispatch(signOut())
+      dispatch(signOut());
     } catch (error) {
       console.log(error);
     }
   };
 
   return (
-    <div className='profile-container'>
-      {/* <img src={img4} alt="bg" className='prof-bg' hidden/> */}
-      <h1 className='profile-title'>Profile</h1>
-      <form onSubmit={handleSubmit} className='profile-form'>
+    <div className="profile-container">
+      <h1 className="profile-title">Profile</h1>
+      <form onSubmit={handleSubmit} className="profile-form">
         <input
-          type='file'
+          type="file"
           ref={fileRef}
           hidden
-          accept='image/*'
+          accept="image/*"
           onChange={(e) => setImage(e.target.files[0])}
         />
         <img
           src={formData.profilePicture || currentUser.profilePicture}
-          alt='profile'
-          className='profile-picture'
+          alt="profile"
+          className="profile-picture"
           onClick={() => fileRef.current.click()}
         />
-        <p className='upload-status'>
+        <p className="upload-status">
           {imageError ? (
-            <span className='error-message'>
+            <span className="error-message">
               Error uploading image (file size must be less than 2 MB)
             </span>
           ) : imagePercent > 0 && imagePercent < 100 ? (
-            <span className='upload-progress'>{`Uploading: ${imagePercent} %`}</span>
+            <span className="upload-progress">{`Uploading: ${imagePercent}%`}</span>
           ) : imagePercent === 100 ? (
-            <span className='success-message'>Image uploaded successfully</span>
+            <span className="success-message">Image uploaded successfully</span>
           ) : (
             ''
           )}
         </p>
         <input
           defaultValue={currentUser.username}
-          type='text'
-          id='username'
-          placeholder='Username'
-          className='input-field'
+          type="text"
+          id="username"
+          placeholder="Username"
+          className="input-field"
           onChange={handleChange}
         />
         <input
           defaultValue={currentUser.email}
-          type='email'
-          id='email'
-          placeholder='Email'
-          className='input-field'
+          type="email"
+          id="email"
+          placeholder="Email"
+          className="input-field"
           onChange={handleChange}
         />
         <input
-          type='password'
-          id='password'
-          placeholder='Password'
-          className='input-field'
+          type="password"
+          id="password"
+          placeholder="Password"
+          className="input-field"
           onChange={handleChange}
         />
-        <button className='submit-button'>
+        <button className="submit-button" type="submit">
           {loading ? 'Loading...' : 'Update'}
         </button>
       </form>
-      <div className='profile-actions'>
-        <span
-          onClick={handleDeleteAccount}
-          className='delete-account'
-        >
+      <div className="profile-actions">
+        <span onClick={handleDeleteAccount} className="delete-account">
           Delete Account
         </span>
-        <span onClick={handleSignOut} className='sign-out'>
+        <span onClick={handleSignOut} className="sign-out">
           Sign out
         </span>
       </div>
-      <p className='error-message'>{error && 'Something went wrong!'}</p>
-      <p className='success-message'>
+      <p className="error-message">{error && 'Something went wrong!'}</p>
+      <p className="success-message">
         {updateSuccess && 'User is updated successfully!'}
       </p>
     </div>
