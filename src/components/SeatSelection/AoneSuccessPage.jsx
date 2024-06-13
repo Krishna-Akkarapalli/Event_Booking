@@ -1,12 +1,12 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import './AoneSeatSelection.css';
 
 const SuccessPage = () => {
   return (
-    <div>
-      <h1>Booking Successful!</h1>
-      <p>Thank you for your booking. Enjoy the show!</p>
-      <Link to="/">Go to Home</Link>
+    <div className="success-container"> 
+      <h1 className="success-message">Booking Successful!</h1> 
+      <p className="success-text">Thank you for your booking. Enjoy the show!</p>
+      <Link to="/" className="success-link">Go to Home</Link>
     </div>
   );
 };

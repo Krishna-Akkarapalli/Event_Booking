@@ -1,0 +1,21 @@
+/* Oauth.css */
+
+.goo-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    background-color: #396add; /* Google Red */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .goo-btn:hover {
+    background-color: #c53727; /* Darker red */
+  }
+  
+  

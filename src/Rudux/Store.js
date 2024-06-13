@@ -2,7 +2,7 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import userReducer from '../Rudux/User/userSlice';
 import artistReducer, { fetchArtists } from '../Rudux/User/artistSlice';
-// import movieEventsReducer from '../Rudux/User/movieEventsSlice';
+import movieEventsReducer from '../Rudux/User/movieEventsSlice';
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
@@ -10,7 +10,7 @@ import { FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist
 const rootReducer = combineReducers({
   user: userReducer,
   artists: artistReducer,
-  // movieEvents: movieEventsReducer,
+  movieEvents: movieEventsReducer,
 });
 
 const persistConfig = {

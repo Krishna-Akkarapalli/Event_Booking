@@ -1,9 +1,9 @@
 .seat-selection-container {
   margin-top: 4rem;
   display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
 
 .time-selection {
@@ -43,10 +43,10 @@
 
 .seat {
   display: flex;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
   width: 70px;
-    height: 40px;
+  height: 40px;
   background-color: #28a745;
   border: none;
   color: white;
@@ -55,10 +55,13 @@
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  position: relative; /* For absolute positioning of seat-price */
 }
+
 .seat-number {
   font-weight: bold;
 }
+
 .seat-price {
   position: absolute;
   bottom: 5px;
@@ -67,6 +70,7 @@
   opacity: 0;
   transition: opacity 0.3s ease;
 }
+
 .seat.booked {
   background-color: #888;
   cursor: not-allowed;
@@ -76,7 +80,6 @@
   background-color: #218838;
   transform: scale(1.1);
 }
-
 
 .seat.selected {
   background-color: #4caf50;
@@ -96,8 +99,6 @@
   opacity: 1;
 }
 
-
-
 @keyframes priceAnimation {
   0% {
     opacity: 0;
@@ -109,10 +110,7 @@
   }
 }
 
-
-
-
-
+/* Styles for the Success Page */
 .booking-confirmation {
   display: flex;
   justify-content: center;
@@ -241,4 +239,41 @@
 /* Animation on Hover */
 .confirmation-tick:hover {
   transform: scale(1.1);
+}
+
+
+
+/* Styles for SuccessPage Component */
+.success-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  text-align: center;
+}
+
+.success-message {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.success-text { /* Style for the paragraph */
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.success-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* Blue */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.success-link:hover {
+  background-color: #0056b3; /* Darker blue */
 }

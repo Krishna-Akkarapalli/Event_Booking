@@ -11,15 +11,11 @@ import Navbar from './components/Navbar';
 import Signup from './components/pages/Signup';
 import ErrorBoundary from './ErrorBoundary';
 import ArtistResOne from './components/Artist/ArtistResOne';
-import ArtoneDatepic from './components/ArtistBook/ArtoneDatepic';
+// import ArtoneDatepic from './components/ArtistBook/ArtoneDatepic';
 import AoneSeatSelection from './components/SeatSelection/AoneSeatSelection';
 import AoneTicketBooking from './components/SeatSelection/AoneTicketBooking';
 import AoneSuccessPage from './components/SeatSelection/AoneSuccessPage';
 import './App.css';
-
-
-
-
 
 
 const App = () => {
@@ -48,7 +44,8 @@ const App = () => {
               <Route path="/signup" element={<Signup />} />
               <Route path="/artist/:id" element={<ArtistResOne />} />
               {/* <Route path="/artreso" element={<ArtistResOne />} /> */}
-              <Route path="/artonebook" element={<ArtoneDatepic />} />
+              {/* <Route path="/artonebook" element={<ArtoneDatepic />} /> */}
+              
               <Route element={<PrivateRoute />}>
                 <Route path="/profile" element={<Profile />} />
               </Route>

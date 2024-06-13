@@ -74,7 +74,7 @@ export default function Signup() {
         </form>
         <div className='signin-link'>
           <p>Have an account?</p>
-          <Link to='/sign-in'>
+          <Link to='/signin'>
             <span className='signin-text'>Sign in</span>
           </Link>
         </div>

@@ -1,13 +1,4 @@
-/* body, html, .app {
-    margin: 0;
-    top: 0;
-    padding: 0;
 
-    height: 100%;
-    width: 100%;
-  } */
-  
-  
   .header {
     position: relative;
     height: 100vh;
@@ -125,13 +116,28 @@
 
   
   /* Main container holding all cards */
-.Artist-cont-main {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns */
-  gap: 16px; /* Space between cards */
-  padding: 16px; /* Padding around the grid */
-  background-color: #f8f8f8; /* Light background for the grid */
-}
+  .Artist-cont-main {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 16px; /* Space between cards */
+    padding: 16px; /* Padding around the grid */
+    background-color: #f8f8f8; /* Light background for the grid */
+    animation: appear linear;
+    animation: 1.6s ease-in-out 0s 1 normal forwards running;
+  }
+  
+  @keyframes appear {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  } 
+  
+
 
 /* Individual card */
 .Artist-sub1 {
@@ -169,13 +175,15 @@
 .event-image-container {
   width: 100%; /* Full width */
   height: 280px; /* Fixed height */
-  overflow: hidden; /* Ensure images fit within the container */
+  overflow: hidden; 
+  /* Ensure images fit within the container */
 }
 
 .event-image-container img {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  object-fit: cover; /* Cover entire container */
+  object-fit: cover;
+   /* Cover entire container */
 }
 
 /* Event details */

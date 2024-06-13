@@ -1,106 +1,97 @@
-/* Container for centering the signup form */
+/* Signup.css */
+
 .signup-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background-color: #f7f7f7;
+  height: 100vh;
 }
 
-/* Signup form container styling */
 .signup-content {
-  background: white;
-  padding: 40px 30px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
   max-width: 400px;
   width: 100%;
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-/* Title styling */
-.signup-title {
-  font-size: 24px;
-  font-weight: 500;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-/* Form styling */
-.signup-form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-/* Input field styling */
-.signup-input {
-  padding: 12px 20px;
-  font-size: 16px;
-  border: 1px solid #dcdcdc;
-  border-radius: 5px;
+  padding: 20px;
   background-color: #f9f9f9;
-  outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
-  color: black; /* Input text color set to black */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Input focus effect */
-.signup-input:focus {
-  border-color: #4285f4;
-  box-shadow: 0 0 5px rgba(66, 133, 244, 0.5);
+.signup-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333333;
 }
 
-/* Button styling */
-.signup-button {
+.signup-form {
+  margin-bottom: 20px;
+}
+
+.signup-input {
+  width: 100%;
   padding: 12px 20px;
   font-size: 16px;
-  background-color: #4285f4;
-  color: white;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+  transition: border-color 0.2s;
+}
+
+
+.signup-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #f44242;
+  color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
 }
 
-/* Button hover effect */
 .signup-button:hover {
-  background-color: #357ae8;
+  background-color: #66a9f0;
 }
 
-/* Sign-in link container */
 .signin-link {
+  text-align: center;
   margin-top: 20px;
-  font-size: 14px;
-  color: #666;
 }
 
-/* Sign-in text styling */
 .signin-text {
-  color: #4285f4;
+  color: #007bff;
   cursor: pointer;
 }
 
-/* Sign-in text hover effect */
-.signin-text:hover {
-  text-decoration: underline;
-}
-
-/* Error message styling */
 .error-message {
-  margin-top: 15px;
-  color: #d93025;
+  color: red;
+  text-align: center;
+  margin-top: 10px;
 }
 
-/* Keyframes for form appearance */
+/* Keyframes and animations */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(-10px);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
   }
 }
+
+.fadeIn {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+}
+
+/* Styles for Google signup */
+
+.oauth-container {
+  margin-top: 20px;
+}
+
+

@@ -8,6 +8,11 @@
   font-size: 16px; 
   color: #333; /* Base text color */
 }
+@media (min-width: 600px) {
+  :root {
+      --column-width: calc(8.33333vw - 3.33333px);
+  }
+}
 
 body, html {
   margin: 0;
